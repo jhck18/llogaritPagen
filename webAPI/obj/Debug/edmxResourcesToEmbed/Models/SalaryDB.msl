@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="salaryModelStoreContainer" CdmEntityContainer="salaryEntities">
+    <EntitySetMapping Name="Ditet_e_punes">
+      <EntityTypeMapping TypeName="salaryModel.Ditet_e_punes">
+        <MappingFragment StoreEntitySet="Ditet_e_punes">
+          <ScalarProperty Name="id_punonjes" ColumnName="id_punonjes" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Emri" ColumnName="Emri" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="ore" ColumnName="ore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagesat_dit_specifike">
+      <EntityTypeMapping TypeName="salaryModel.Pagesat_dit_specifike">
+        <MappingFragment StoreEntitySet="Pagesat_dit_specifike">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Lloji" ColumnName="Lloji" />
+          <ScalarProperty Name="Perqindja" ColumnName="Perqindja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datat_e_Festave_Zyrtare">
+      <EntityTypeMapping TypeName="salaryModel.Datat_e_Festave_Zyrtare">
+        <MappingFragment StoreEntitySet="Datat_e_Festave_Zyrtare">
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Punonjes">
+      <EntityTypeMapping TypeName="salaryModel.Punonjes">
+        <MappingFragment StoreEntitySet="Punonjes">
+          <ScalarProperty Name="Rroga" ColumnName="Rroga" />
+          <ScalarProperty Name="Emri" ColumnName="Emri" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="salaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'salary.dbo.Datat_e_Festave_Zyrtare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Datat_e_Festave_Zyrtare">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="data" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'salary.dbo.Ditet_e_punes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Ditet_e_punes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_punonjes" Type="int" />
+          <Property Name="Emri" Type="varchar" MaxLength="50" />
+          <Property Name="Data" Type="date" />
+          <Property Name="ore" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'salary.dbo.Pagesat_dit_specifike' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Pagesat_dit_specifike">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Lloji" Type="varchar" MaxLength="50" />
+          <Property Name="Perqindja" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'salary.dbo.Punonjes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Punonjes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emri" Type="varchar" MaxLength="50" />
+          <Property Name="Rroga" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="salaryModelStoreContainer">
+          <EntitySet Name="Datat_e_Festave_Zyrtare" EntityType="Self.Datat_e_Festave_Zyrtare" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Datat_e_Festave_Zyrtare].[id] AS [id], 
+    [Datat_e_Festave_Zyrtare].[data] AS [data]
+    FROM [dbo].[Datat_e_Festave_Zyrtare] AS [Datat_e_Festave_Zyrtare]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Ditet_e_punes" EntityType="Self.Ditet_e_punes" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Ditet_e_punes].[id] AS [id], 
+    [Ditet_e_punes].[id_punonjes] AS [id_punonjes], 
+    [Ditet_e_punes].[Emri] AS [Emri], 
+    [Ditet_e_punes].[Data] AS [Data], 
+    [Ditet_e_punes].[ore] AS [ore]
+    FROM [dbo].[Ditet_e_punes] AS [Ditet_e_punes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Pagesat_dit_specifike" EntityType="Self.Pagesat_dit_specifike" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Pagesat_dit_specifike].[id] AS [id], 
+    [Pagesat_dit_specifike].[Lloji] AS [Lloji], 
+    [Pagesat_dit_specifike].[Perqindja] AS [Perqindja]
+    FROM [dbo].[Pagesat_dit_specifike] AS [Pagesat_dit_specifike]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Punonjes" EntityType="Self.Punonjes" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Punonjes].[id] AS [id], 
+    [Punonjes].[Emri] AS [Emri], 
+    [Punonjes].[Rroga] AS [Rroga]
+    FROM [dbo].[Punonjes] AS [Punonjes]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="salaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ditet_e_punes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <Property Name="ore" Type="Int32" />
+          <Property Name="id_punonjes" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Pagesat_dit_specifike">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Lloji" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Perqindja" Type="Double" />
+        </EntityType>
+        <EntityContainer Name="salaryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ditet_e_punes" EntityType="Self.Ditet_e_punes" />
+          <EntitySet Name="Pagesat_dit_specifike" EntityType="Self.Pagesat_dit_specifike" />
+          <EntitySet Name="Datat_e_Festave_Zyrtare" EntityType="salaryModel.Datat_e_Festave_Zyrtare" />
+          <EntitySet Name="Punonjes" EntityType="salaryModel.Punonjes" />
+        </EntityContainer>
+        <EntityType Name="Datat_e_Festave_Zyrtare">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="data" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Punonjes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rroga" Type="Decimal" Precision="10" Scale="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="salaryModelStoreContainer" CdmEntityContainer="salaryEntities">
+          <EntitySetMapping Name="Ditet_e_punes">
+            <EntityTypeMapping TypeName="salaryModel.Ditet_e_punes">
+              <MappingFragment StoreEntitySet="Ditet_e_punes">
+                <ScalarProperty Name="id_punonjes" ColumnName="id_punonjes" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Emri" ColumnName="Emri" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="ore" ColumnName="ore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pagesat_dit_specifike">
+            <EntityTypeMapping TypeName="salaryModel.Pagesat_dit_specifike">
+              <MappingFragment StoreEntitySet="Pagesat_dit_specifike">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Lloji" ColumnName="Lloji" />
+                <ScalarProperty Name="Perqindja" ColumnName="Perqindja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Datat_e_Festave_Zyrtare">
+            <EntityTypeMapping TypeName="salaryModel.Datat_e_Festave_Zyrtare">
+              <MappingFragment StoreEntitySet="Datat_e_Festave_Zyrtare">
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Punonjes">
+            <EntityTypeMapping TypeName="salaryModel.Punonjes">
+              <MappingFragment StoreEntitySet="Punonjes">
+                <ScalarProperty Name="Rroga" ColumnName="Rroga" />
+                <ScalarProperty Name="Emri" ColumnName="Emri" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

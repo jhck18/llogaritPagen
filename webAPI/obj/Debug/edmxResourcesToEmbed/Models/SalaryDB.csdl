@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="salaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ditet_e_punes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Data" Type="DateTime" Precision="0" />
+    <Property Name="ore" Type="Int32" />
+    <Property Name="id_punonjes" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Pagesat_dit_specifike">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lloji" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Perqindja" Type="Double" />
+  </EntityType>
+  <EntityContainer Name="salaryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ditet_e_punes" EntityType="Self.Ditet_e_punes" />
+    <EntitySet Name="Pagesat_dit_specifike" EntityType="Self.Pagesat_dit_specifike" />
+    <EntitySet Name="Datat_e_Festave_Zyrtare" EntityType="salaryModel.Datat_e_Festave_Zyrtare" />
+    <EntitySet Name="Punonjes" EntityType="salaryModel.Punonjes" />
+  </EntityContainer>
+  <EntityType Name="Datat_e_Festave_Zyrtare">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="data" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Punonjes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rroga" Type="Decimal" Precision="10" Scale="0" />
+  </EntityType>
+</Schema>

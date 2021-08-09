@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="salaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'salary.dbo.Datat_e_Festave_Zyrtare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Datat_e_Festave_Zyrtare">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="data" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'salary.dbo.Ditet_e_punes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Ditet_e_punes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_punonjes" Type="int" />
+    <Property Name="Emri" Type="varchar" MaxLength="50" />
+    <Property Name="Data" Type="date" />
+    <Property Name="ore" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'salary.dbo.Pagesat_dit_specifike' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Pagesat_dit_specifike">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lloji" Type="varchar" MaxLength="50" />
+    <Property Name="Perqindja" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'salary.dbo.Punonjes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Punonjes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Emri" Type="varchar" MaxLength="50" />
+    <Property Name="Rroga" Type="decimal" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="salaryModelStoreContainer">
+    <EntitySet Name="Datat_e_Festave_Zyrtare" EntityType="Self.Datat_e_Festave_Zyrtare" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Datat_e_Festave_Zyrtare].[id] AS [id], 
+    [Datat_e_Festave_Zyrtare].[data] AS [data]
+    FROM [dbo].[Datat_e_Festave_Zyrtare] AS [Datat_e_Festave_Zyrtare]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Ditet_e_punes" EntityType="Self.Ditet_e_punes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Ditet_e_punes].[id] AS [id], 
+    [Ditet_e_punes].[id_punonjes] AS [id_punonjes], 
+    [Ditet_e_punes].[Emri] AS [Emri], 
+    [Ditet_e_punes].[Data] AS [Data], 
+    [Ditet_e_punes].[ore] AS [ore]
+    FROM [dbo].[Ditet_e_punes] AS [Ditet_e_punes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Pagesat_dit_specifike" EntityType="Self.Pagesat_dit_specifike" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Pagesat_dit_specifike].[id] AS [id], 
+    [Pagesat_dit_specifike].[Lloji] AS [Lloji], 
+    [Pagesat_dit_specifike].[Perqindja] AS [Perqindja]
+    FROM [dbo].[Pagesat_dit_specifike] AS [Pagesat_dit_specifike]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Punonjes" EntityType="Self.Punonjes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Punonjes].[id] AS [id], 
+    [Punonjes].[Emri] AS [Emri], 
+    [Punonjes].[Rroga] AS [Rroga]
+    FROM [dbo].[Punonjes] AS [Punonjes]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
