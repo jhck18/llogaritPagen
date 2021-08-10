@@ -12,17 +12,11 @@ namespace webAPI.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        public string Get(string id)
+        public string Get()
         {
             Llogaritja_pages lp = new Llogaritja_pages();
-            var a  = lp.getJsonData();
-            return "value";
+            var fakeDataFromDB  = lp.getJsonData();
+            return fakeDataFromDB;
         }
 
         // POST api/values
