@@ -3,24 +3,16 @@
   <EntityType Name="Ditet_e_punes">
     <Key>
       <PropertyRef Name="id" />
+      <PropertyRef Name="data" />
+      <PropertyRef Name="ore_pune" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Emri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Data" Type="DateTime" Precision="0" />
-    <Property Name="ore" Type="Int32" />
-    <Property Name="id_punonjes" Type="Int32" />
-  </EntityType>
-  <EntityType Name="Pagesat_dit_specifike">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Lloji" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Perqindja" Type="Double" />
+    <Property Name="id_punonjes" Type="Int32" Nullable="false" />
+    <Property Name="data" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ore_pune" Type="Double" Nullable="false" />
   </EntityType>
   <EntityContainer Name="salaryEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Ditet_e_punes" EntityType="Self.Ditet_e_punes" />
-    <EntitySet Name="Pagesat_dit_specifike" EntityType="Self.Pagesat_dit_specifike" />
     <EntitySet Name="Datat_e_Festave_Zyrtare" EntityType="salaryModel.Datat_e_Festave_Zyrtare" />
     <EntitySet Name="Punonjes" EntityType="salaryModel.Punonjes" />
   </EntityContainer>
@@ -29,14 +21,16 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="data" Type="DateTime" Precision="0" />
+    <Property Name="data" Type="DateTime" Precision="0" Nullable="false" />
   </EntityType>
   <EntityType Name="Punonjes">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="id_punonjes" />
+      <PropertyRef Name="emri" />
+      <PropertyRef Name="paga_mujore" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Emri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Rroga" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="id_punonjes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="emri" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="paga_mujore" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
   </EntityType>
 </Schema>

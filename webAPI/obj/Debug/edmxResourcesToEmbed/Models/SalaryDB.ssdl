@@ -7,39 +7,32 @@ warning 6002: The table/view 'salary.dbo.Datat_e_Festave_Zyrtare' does not have 
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="data" Type="date" />
+    <Property Name="data" Type="date" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'salary.dbo.Ditet_e_punes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Ditet_e_punes">
     <Key>
       <PropertyRef Name="id" />
+      <PropertyRef Name="data" />
+      <PropertyRef Name="ore_pune" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_punonjes" Type="int" />
-    <Property Name="Emri" Type="varchar" MaxLength="50" />
-    <Property Name="Data" Type="date" />
-    <Property Name="ore" Type="int" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'salary.dbo.Pagesat_dit_specifike' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Pagesat_dit_specifike">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Lloji" Type="varchar" MaxLength="50" />
-    <Property Name="Perqindja" Type="float" />
+    <Property Name="id_punonjes" Type="int" Nullable="false" />
+    <Property Name="data" Type="date" Nullable="false" />
+    <Property Name="ore_pune" Type="float" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'salary.dbo.Punonjes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Punonjes">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="id_punonjes" />
+      <PropertyRef Name="emri" />
+      <PropertyRef Name="paga_mujore" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Emri" Type="varchar" MaxLength="50" />
-    <Property Name="Rroga" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="id_punonjes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emri" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="paga_mujore" Type="decimal" Precision="10" Scale="2" Nullable="false" />
   </EntityType>
   <EntityContainer Name="salaryModelStoreContainer">
     <EntitySet Name="Datat_e_Festave_Zyrtare" EntityType="Self.Datat_e_Festave_Zyrtare" store:Type="Tables" store:Schema="dbo">
@@ -52,23 +45,15 @@ warning 6002: The table/view 'salary.dbo.Punonjes' does not have a primary key d
       <DefiningQuery>SELECT 
     [Ditet_e_punes].[id] AS [id], 
     [Ditet_e_punes].[id_punonjes] AS [id_punonjes], 
-    [Ditet_e_punes].[Emri] AS [Emri], 
-    [Ditet_e_punes].[Data] AS [Data], 
-    [Ditet_e_punes].[ore] AS [ore]
+    [Ditet_e_punes].[data] AS [data], 
+    [Ditet_e_punes].[ore_pune] AS [ore_pune]
     FROM [dbo].[Ditet_e_punes] AS [Ditet_e_punes]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Pagesat_dit_specifike" EntityType="Self.Pagesat_dit_specifike" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Pagesat_dit_specifike].[id] AS [id], 
-    [Pagesat_dit_specifike].[Lloji] AS [Lloji], 
-    [Pagesat_dit_specifike].[Perqindja] AS [Perqindja]
-    FROM [dbo].[Pagesat_dit_specifike] AS [Pagesat_dit_specifike]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="Punonjes" EntityType="Self.Punonjes" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
-    [Punonjes].[id] AS [id], 
-    [Punonjes].[Emri] AS [Emri], 
-    [Punonjes].[Rroga] AS [Rroga]
+    [Punonjes].[id_punonjes] AS [id_punonjes], 
+    [Punonjes].[emri] AS [emri], 
+    [Punonjes].[paga_mujore] AS [paga_mujore]
     FROM [dbo].[Punonjes] AS [Punonjes]</DefiningQuery>
     </EntitySet>
   </EntityContainer>

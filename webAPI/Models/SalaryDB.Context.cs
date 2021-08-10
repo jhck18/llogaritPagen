@@ -26,7 +26,6 @@ namespace webAPI.Models
         }
     
         public virtual DbSet<Ditet_e_punes> Ditet_e_punes { get; set; }
-        public virtual DbSet<Pagesat_dit_specifike> Pagesat_dit_specifike { get; set; }
         public virtual DbSet<Datat_e_Festave_Zyrtare> Datat_e_Festave_Zyrtare { get; set; }
         public virtual DbSet<Punonjes> Punonjes { get; set; }
     }

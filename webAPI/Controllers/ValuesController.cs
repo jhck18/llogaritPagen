@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -17,27 +18,19 @@ namespace webAPI.Controllers
         }
 
         // GET api/values/5
-        public string Get(DateTime id)
+        public string Get(string id)
         {
-
-            Llogaritja_pages.ditePunePerMuajinAktual(id);
+            Llogaritja_pages lp = new Llogaritja_pages();
+            var a  = lp.getJsonData();
             return "value";
         }
 
         // POST api/values
-        public void Post([FromBody] Input value)
+        public string Post([FromBody] ExpectedInput value)
         {
-
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
+            Llogaritja_pages lp = new Llogaritja_pages();
+            
+            return JsonConvert.SerializeObject(lp.llogaritPagen(value));
         }
     }
 }

@@ -174,10 +174,7 @@
     <Compile Include="Models\Ditet_e_punes.cs">
       <DependentUpon>SalaryDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Input.cs" />
-    <Compile Include="Models\Pagesat_dit_specifike.cs">
-      <DependentUpon>SalaryDB.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\ExpectedInput.cs" />
     <Compile Include="Models\Punonjes.cs">
       <DependentUpon>SalaryDB.tt</DependentUpon>
     </Compile>

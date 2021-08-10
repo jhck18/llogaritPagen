@@ -4,20 +4,10 @@
     <EntitySetMapping Name="Ditet_e_punes">
       <EntityTypeMapping TypeName="salaryModel.Ditet_e_punes">
         <MappingFragment StoreEntitySet="Ditet_e_punes">
+          <ScalarProperty Name="ore_pune" ColumnName="ore_pune" />
+          <ScalarProperty Name="data" ColumnName="data" />
           <ScalarProperty Name="id_punonjes" ColumnName="id_punonjes" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Emri" ColumnName="Emri" />
-          <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="ore" ColumnName="ore" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Pagesat_dit_specifike">
-      <EntityTypeMapping TypeName="salaryModel.Pagesat_dit_specifike">
-        <MappingFragment StoreEntitySet="Pagesat_dit_specifike">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Lloji" ColumnName="Lloji" />
-          <ScalarProperty Name="Perqindja" ColumnName="Perqindja" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -32,9 +22,9 @@
     <EntitySetMapping Name="Punonjes">
       <EntityTypeMapping TypeName="salaryModel.Punonjes">
         <MappingFragment StoreEntitySet="Punonjes">
-          <ScalarProperty Name="Rroga" ColumnName="Rroga" />
-          <ScalarProperty Name="Emri" ColumnName="Emri" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="paga_mujore" ColumnName="paga_mujore" />
+          <ScalarProperty Name="emri" ColumnName="emri" />
+          <ScalarProperty Name="id_punonjes" ColumnName="id_punonjes" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

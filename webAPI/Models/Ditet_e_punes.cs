@@ -11,13 +11,13 @@ namespace webAPI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Ditet_e_punes
     {
         public int id { get; set; }
         public int id_punonjes { get; set; }
-        public string Emri { get; set; }
-        public System.DateTime Data { get; set; }
-        public int ore { get; set; }
+        public System.DateTime data { get; set; }
+        public double ore_pune { get; set; }
     }
 }

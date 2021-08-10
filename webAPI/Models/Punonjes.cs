@@ -14,8 +14,8 @@ namespace webAPI.Models
     
     public partial class Punonjes
     {
-        public int id { get; set; }
-        public string Emri { get; set; }
-        public decimal  Rroga { get; set; }
+        public int id_punonjes { get; set; }
+        public string emri { get; set; }
+        public decimal paga_mujore { get; set; }
     }
 }
